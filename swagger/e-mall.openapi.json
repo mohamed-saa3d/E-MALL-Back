@@ -1,0 +1,2407 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "e-mall",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "register",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "password"
+                ]
+              },
+              "example": {
+                "name": "Mohammed Hassan",
+                "email": "mohamadhassan57546@gmail.com",
+                "password": "1234567h&"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "login",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ]
+              },
+              "example": {
+                "email": "mohamadhassan57546@gmail.com",
+                "password": "1234567h&"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/refresh": {
+      "post": {
+        "summary": "refresh",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ]
+              },
+              "example": {
+                "email": "mmmaaa@1.com",
+                "password": "1234567h&"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "summary": "logout",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ]
+              },
+              "example": {
+                "email": "mmmaaa@1.com",
+                "password": "1234567h&"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/forgot-password/": {
+      "post": {
+        "summary": "forgot password",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email"
+                ]
+              },
+              "example": {
+                "email": "mohamadhassan57546@gmail.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/reset-password/5a2da8e56f91f40e5307d6ae557fd30314bb47a6f7244529867ae724c166b631": {
+      "post": {
+        "summary": "reset password",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "newPassword": {
+                    "type": "string"
+                  },
+                  "confirmPassword": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "newPassword",
+                  "confirmPassword"
+                ]
+              },
+              "example": {
+                "newPassword": "1234567h&",
+                "confirmPassword": "1234567h&"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/change-password": {
+      "post": {
+        "summary": "change password",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "oldPassword": {
+                    "type": "string"
+                  },
+                  "newPassword": {
+                    "type": "string"
+                  },
+                  "confirmPassword": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "oldPassword",
+                  "newPassword",
+                  "confirmPassword"
+                ]
+              },
+              "example": {
+                "oldPassword": "1234567h&",
+                "newPassword": "1234567h&",
+                "confirmPassword": "1234567h&"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/send-code-email-verification": {
+      "post": {
+        "summary": "send code email verification",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email"
+                ]
+              },
+              "example": {
+                "email": "mohamadhassan57546@gmail.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/email-verification": {
+      "patch": {
+        "summary": "email-verification",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "verifyCode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "verifyCode"
+                ]
+              },
+              "example": {
+                "email": "mohamadhassan57546@gmail.com",
+                "verifyCode": "808833"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/": {
+      "post": {
+        "summary": "create category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTcwNzczMSwiZXhwIjoxNzcxNzA4NjMxfQ.WIX_0zvsugc7eiMCivF2MTjOfwVfk-phEpbbrunYcFw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "example": {
+                "name": "Phones",
+                "parentId": "69dc075b4012a472efe02617"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "list categories",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTU0Mjk1NSwiZXhwIjoxNzcxNTQzODU1fQ.3uggbmnVFad0P08afwbgWHnbPUExFTnHGV3FbR9nzkA",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/69dc075b4012a472efe02617/usage": {
+      "get": {
+        "summary": "get Category Usage",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTU0Mjk1NSwiZXhwIjoxNzcxNTQzODU1fQ.3uggbmnVFad0P08afwbgWHnbPUExFTnHGV3FbR9nzkA",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/69979a0795c2382652d878eb": {
+      "get": {
+        "summary": "get Category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTU0Mjk1NSwiZXhwIjoxNzcxNTQzODU1fQ.3uggbmnVFad0P08afwbgWHnbPUExFTnHGV3FbR9nzkA",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "summary": "update category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTcwNzczMSwiZXhwIjoxNzcxNzA4NjMxfQ.WIX_0zvsugc7eiMCivF2MTjOfwVfk-phEpbbrunYcFw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "example": {
+                "name": "clothes"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/69dbef4fcd9c499afb4a31a7": {
+      "delete": {
+        "summary": "delete category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTcwNzczMSwiZXhwIjoxNzcxNzA4NjMxfQ.WIX_0zvsugc7eiMCivF2MTjOfwVfk-phEpbbrunYcFw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              "example": {
+                "name": "clothes"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/699b6cf9ffde2909e5d52e86/manage/products": {
+      "get": {
+        "summary": "list products",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MjkwNTI2OSwiZXhwIjoxNzc0MjAxMjY5fQ.WX3E35Zr_H6wUml5Zq-pSAoCrB9nkopaJPwpHqNA64s",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [
+                  "01KKQRN0PMPKHGNPKV5F8DKS9V"
+                ]
+              },
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69dbef4fcd9c499afb4a31a8/manage/products": {
+      "post": {
+        "summary": "create product",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MjkwNTI2OSwiZXhwIjoxNzc0MjAxMjY5fQ.WX3E35Zr_H6wUml5Zq-pSAoCrB9nkopaJPwpHqNA64s",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "name": "iPhone 15 Pro Max",
+                "description": "Apple flagship phone with multiple storage variants",
+                "brand": "Apple",
+                "categoryId": "69dc07814012a472efe02618",
+                "basePrice": 32000,
+                "images": [
+                  "https://upload.wikimedia.org/wikipedia/commons/f/f3/IPhone_15_Pro_Max.jpeg",
+                  "https://upload.wikimedia.org/wikipedia/commons/4/42/Front_of_iPhone_15_Pro_Max.jpg"
+                ],
+                "tags": [
+                  "apple",
+                  "iphone",
+                  "smartphone",
+                  "premium"
+                ],
+                "variants": [
+                  {
+                    "sku": "IP15PM-256-NAT",
+                    "price": 32000,
+                    "salePrice": 30500,
+                    "saleStartAt": "2026-04-12T00:00:00.000Z",
+                    "saleEndAt": "2026-04-20T23:59:59.000Z",
+                    "isDefault": true,
+                    "attributes": [
+                      {
+                        "name": "Storage",
+                        "value": "256GB"
+                      },
+                      {
+                        "name": "Color",
+                        "value": "Natural Titanium"
+                      }
+                    ],
+                    "images": [
+                      "https://upload.wikimedia.org/wikipedia/commons/6/60/Back_view_of_iPhone_15_Pro_Max_Natural_Titanium.jpg"
+                    ]
+                  },
+                  {
+                    "sku": "IP15PM-512-BLK",
+                    "price": 36500,
+                    "attributes": [
+                      {
+                        "name": "Storage",
+                        "value": "512GB"
+                      },
+                      {
+                        "name": "Color",
+                        "value": "Black Titanium"
+                      }
+                    ],
+                    "images": [
+                      "https://upload.wikimedia.org/wikipedia/commons/e/ed/Back_view_of_iPhone_15_Pro_Max_Natural_titanium.jpg"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69dbef4fcd9c499afb4a31a8/manage/products/69dc0bd92a409686d9ef8f77": {
+      "patch": {
+        "summary": "update product ",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MjkwNTI2OSwiZXhwIjoxNzc0MjAxMjY5fQ.WX3E35Zr_H6wUml5Zq-pSAoCrB9nkopaJPwpHqNA64s",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": "// {\r\n//   \"name\": \"iPhone 15 Pro Max\",\r\n//   \"description\": \"نسخة محدثة من المنتج مع وصف أوضح\",\r\n//   \"brand\": \"Apple\"\r\n// }\r\n\r\n// __________________________________\r\n\r\n// {\r\n//   \"basePrice\": 28000,\r\n//   \"images\": [\r\n//     \"https://cdn.example.com/products/iphone-1.jpg\",\r\n//     \"https://cdn.example.com/products/iphone-2.jpg\"\r\n//   ],\r\n//   \"tags\": [\"mobile\", \"apple\", \"premium\"],\r\n//   \"isActive\": true\r\n// }\r\n\r\n\r\n// ______________________________________________________________\r\n// {\r\n//   \"variants\": [\r\n//     {\r\n//       \"_id\": \"66f1e4a2b7d9a00000000001\",\r\n//       \"sku\": \"IPH15PM-256-BLK\",\r\n//       \"price\": 32000,\r\n//       \"salePrice\": 30000,\r\n//       \"saleStartAt\": \"2026-04-12T00:00:00.000Z\",\r\n//       \"saleEndAt\": \"2026-04-20T23:59:59.000Z\",\r\n//       \"isDefault\": true,\r\n//       \"attributes\": [\r\n//         { \"name\": \"Storage\", \"value\": \"256GB\" },\r\n//         { \"name\": \"Color\", \"value\": \"Black\" }\r\n//       ],\r\n//       \"images\": [\"https://cdn.example.com/variants/black.jpg\"]\r\n//     },\r\n//     {\r\n//       \"_id\": \"66f1e4a2b7d9a00000000002\",\r\n//       \"sku\": \"IPH15PM-512-BLU\",\r\n//       \"price\": 36000,\r\n//       \"attributes\": [\r\n//         { \"name\": \"Storage\", \"value\": \"512GB\" },\r\n//         { \"name\": \"Color\", \"value\": \"Blue\" }\r\n//       ]\r\n//     }\r\n//   ],\r\n//   \"defaultVariantId\": \"66f1e4a2b7d9a00000000001\"\r\n// }\r\n// _________________________________________________________________________________________________\r\n// {\r\n//   \"addVariant\": {\r\n//     \"sku\": \"IPH15PM-1TB-NAT\",\r\n//     \"price\": 42000,\r\n//     \"salePrice\": 39999,\r\n//     \"saleStartAt\": \"2026-04-12T00:00:00.000Z\",\r\n//     \"saleEndAt\": \"2026-04-15T23:59:59.000Z\",\r\n//     \"isDefault\": false,\r\n//     \"attributes\": [\r\n//       { \"name\": \"Storage\", \"value\": \"1TB\" },\r\n//       { \"name\": \"Color\", \"value\": \"Natural Titanium\" }\r\n//     ],\r\n//     \"images\": [\"https://cdn.example.com/variants/1tb.jpg\"]\r\n//   }\r\n// }\r\n\r\n// _________________________________________________________________________________________________\r\n// {\r\n//   \"defaultVariantId\": \"66f1e4a2b7d9a00000000002\"\r\n// }\r\n\r\n\r\n\r\n"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69dbef4fcd9c499afb4a31a8/manage/products/69dc08e777975b1fb963840a": {
+      "get": {
+        "summary": "get my product",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MjkwNTI2OSwiZXhwIjoxNzc0MjAxMjY5fQ.WX3E35Zr_H6wUml5Zq-pSAoCrB9nkopaJPwpHqNA64s",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "delete my product",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MjkwNTI2OSwiZXhwIjoxNzc0MjAxMjY5fQ.WX3E35Zr_H6wUml5Zq-pSAoCrB9nkopaJPwpHqNA64s",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69dbef4fcd9c499afb4a31a8/manage/dashboard": {
+      "get": {
+        "summary": "get my dashboard",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTc5MzA2OCwiZXhwIjoxNzczMDg5MDY4fQ.AXEoa7K2cC1gX0hkGFwtHTwrE9I1Ma8rxAUN3G_7HXM",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "categoryName": {
+                    "type": "string"
+                  },
+                  "openingTime": {
+                    "type": "string"
+                  },
+                  "closingTime": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "categoryName",
+                  "openingTime",
+                  "closingTime"
+                ]
+              },
+              "example": {
+                "name": "AlA7madi",
+                "email": "moh1amm1ed111@1e1111am111ple111.com",
+                "categoryName": "shoes",
+                "openingTime": "12:00",
+                "closingTime": "20:00"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/my-store": {
+      "get": {
+        "summary": "get my store",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODc4OTJkMTFmNTA4MTQwYjUwOTk4NSIsImlhdCI6MTc3MjgyOTg3OSwiZXhwIjoxNzc0MTI1ODc5fQ.jtwbEKKdpuavELYGBx6jsvaqu5pVbDsmQTM8Vc14IBI",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69dbef4fcd9c499afb4a31a8/manage/settings": {
+      "patch": {
+        "summary": "store settings",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODc4OTJkMTFmNTA4MTQwYjUwOTk4NSIsImlhdCI6MTc3MjgyOTg3OSwiZXhwIjoxNzc0MTI1ODc5fQ.jtwbEKKdpuavELYGBx6jsvaqu5pVbDsmQTM8Vc14IBI",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isActive": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "isActive"
+                ]
+              },
+              "example": {
+                "isActive": "true"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69aa5c3e27668940f64adaf5": {
+      "delete": {
+        "summary": "delete store",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MjkwNTI2OSwiZXhwIjoxNzc0MjAxMjY5fQ.WX3E35Zr_H6wUml5Zq-pSAoCrB9nkopaJPwpHqNA64s",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isActive": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "isActive"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/admin": {
+      "get": {
+        "summary": "get stores (admin)",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": "true",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTc5MzA2OCwiZXhwIjoxNzczMDg5MDY4fQ.AXEoa7K2cC1gX0hkGFwtHTwrE9I1Ma8rxAUN3G_7HXM",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "categoryName": {
+                    "type": "string"
+                  },
+                  "openingTime": {
+                    "type": "string"
+                  },
+                  "closingTime": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "categoryName",
+                  "openingTime",
+                  "closingTime"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store": {
+      "post": {
+        "summary": "create store",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3Mjc3NDU4MiwiZXhwIjoxNzc0MDcwNTgyfQ.48zMHT2X4vOykNe6fdrpl1AGmCuH_v3kMBrWTZ0Ht8E",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "categoryName": {
+                    "type": "string"
+                  },
+                  "openingTime": {
+                    "type": "string"
+                  },
+                  "closingTime": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "categoryName",
+                  "openingTime",
+                  "closingTime"
+                ]
+              },
+              "example": {
+                "name": "al nagmkj",
+                "email": "mohamadhassan57546@gmail.com",
+                "categoryName": "shoes",
+                "openingTime": "12:00",
+                "closingTime": "20:00"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/category/69aa5c7f27668940f64adafd": {
+      "get": {
+        "summary": "get store by category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTc5MzA2OCwiZXhwIjoxNzczMDg5MDY4fQ.AXEoa7K2cC1gX0hkGFwtHTwrE9I1Ma8rxAUN3G_7HXM",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "categoryName": {
+                    "type": "string"
+                  },
+                  "openingTime": {
+                    "type": "string"
+                  },
+                  "closingTime": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "categoryName",
+                  "openingTime",
+                  "closingTime"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/": {
+      "get": {
+        "summary": "get stores",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGIyZjFhMjdkODg1ZWI0NzZjOGRmMSIsImlhdCI6MTc3MTc5MzA2OCwiZXhwIjoxNzczMDg5MDY4fQ.AXEoa7K2cC1gX0hkGFwtHTwrE9I1Ma8rxAUN3G_7HXM",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "categoryName": {
+                    "type": "string"
+                  },
+                  "openingTime": {
+                    "type": "string"
+                  },
+                  "closingTime": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "categoryName",
+                  "openingTime",
+                  "closingTime"
+                ]
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/69dbef4fcd9c499afb4a31a8": {
+      "get": {
+        "summary": "get products in store (public)",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/cart": {
+      "get": {
+        "summary": "get cart",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "clear cart",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/cart/item": {
+      "post": {
+        "summary": "add item to cart",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "variantId": "69dbf48f4012a472efe02612",
+                "quantity": 4
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/cart/item/69dbf48f4012a472efe02612/decrease": {
+      "patch": {
+        "summary": "decrease cart item",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "quantity": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/cart/item/69dbf48f4012a472efe02612": {
+      "delete": {
+        "summary": "remove cart item",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "quantity": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/wishlist": {
+      "get": {
+        "summary": "get wish list",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/wishlist/item": {
+      "post": {
+        "summary": "add item to cart",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "variantId": "69dbf48f4012a472efe02612"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/wishlist/item/69dbf48f4012a472efe02612": {
+      "delete": {
+        "summary": "remove cart item",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/addresses": {
+      "get": {
+        "summary": "get my addresses",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "create address",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "street": "7 شارع النصر",
+                "city": "Mansoura",
+                "distanceMark": "جنب صيدلية العزبي",
+                "phone": "01055556666",
+                "notes": "الدور التالت",
+                "isDefault": false
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/addresses/default": {
+      "get": {
+        "summary": "get my defalut addresses",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/addresses/69ece55397fba2bf8f591e91": {
+      "get": {
+        "summary": "get address by id",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/addresses/69ece54f97fba2bf8f591e90": {
+      "patch": {
+        "summary": "update address by id",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "street": "20 Ramses St",
+                "city": "Cairo",
+                "distanceMark": "Near Train Station",
+                "notes": "New home address"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/addresses/69ece50597fba2bf8f591e8f": {
+      "delete": {
+        "summary": "delete address by id ",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/addresses/69ece54f97fba2bf8f591e90/default": {
+      "patch": {
+        "summary": "update address by id Copy",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "example": "Bearer {{ACCESS_TOKEN}}",
+            "schema": {
+              "type": "string",
+              "default": "Bearer {{ACCESS_TOKEN}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "status": "success",
+                  "data": {
+                    "addresses": [],
+                    "total": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "webhooks": {},
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}

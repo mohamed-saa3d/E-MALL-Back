@@ -1,22 +1,37 @@
 {
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.2.0",
+    "@types/nodemailer": "^7.0.9",
+    "@types/uuid": "^10.0.0",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^7.0.0",
     "mongoose": "^9.1.5",
+    "nodemailer": "^8.0.1",
+    "swagger-ui-express": "^5.0.1",
     "typescript": "^5.9.3",
-    "xss": "^1.0.15"
+    "uuid": "^13.0.0",
+    "xss": "^1.0.15",
+    "zod": "^4.3.6",
+    "socket.io": "^4.8.1"
   },
   "name": "e-mall",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+     "build": "tsc",
+  "start": "node dist/app.js",
+  "dev": "ts-node-dev src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,14 +1,50 @@
 import express from "express";
+import { createServer } from "http";
 import environment from "./config/environment";
 import connectDB from "./db-connect";
 import xss from "./middlewares/xss";
-import helmet from "helmet"
+import helmet from "helmet";
+import authRouter from "./apis/auth/router/auth.route";
+import categoryRouter from "./apis/category/router/category.route";
+import cookieParser from "cookie-parser";
+import globalErrorHandler from "./middlewares/global-error-handling.middleware";
+import { quickValidate } from "./middlewares/quick-validate.middleware";
+import storeRouter from "./apis/store/router/store.router";
+import cartRouter from "./apis/cart/router/cart.router";
+import wishRouter from "./apis/wish-list/router/wish-list.router";
+import productRouter from "./apis/products-and-variants/router/product.router";
+import addressRouter from "./apis/address/router/address.router";
+import orderRouter from "./apis/order/router/order.router";
+import deliveryRouter from "./apis/order/router/delivery.router";
+import paymentRouter from "./apis/order/router/payment.router";
+import notificationRouter from "./apis/notifications/router/notification.router";
+import { initSocketServer } from "./socket/socket.server";
+import swaggerDocs from "../swagger/swagger-docs";
+
 connectDB();
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(xss);
-app.use(helmet)
+app.use(helmet());
+app.use(quickValidate);
+app.use("/auth", authRouter);
+app.use("/categories", categoryRouter);
+app.use("/store", storeRouter);
+app.use("/cart", cartRouter);
+app.use("/wishlist", wishRouter);
+app.use("/products", productRouter);
+app.use("/addresses", addressRouter);
+app.use("/orders", orderRouter);
+app.use("/delivery", deliveryRouter);
+app.use("/payments", paymentRouter);
+app.use("/notifications", notificationRouter);
+swaggerDocs(app);
+app.use(globalErrorHandler);
 
-app.listen(environment.PORT, () => {
+const server = createServer(app);
+initSocketServer(server);
+
+server.listen(environment.PORT, () => {
   console.log(`Server running on port ${environment.PORT}`);
 });
