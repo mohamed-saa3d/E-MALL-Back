@@ -1,9 +1,9 @@
 import { ObjectId } from "mongoose";
 import environment from "../../../config/environment";
 import AppError from "../../../utils/app-error";
-import User from "../models/user.model";
+import User from "../../auth/models/user.model";
 import bcrypt from "bcrypt";
-import LoginSession from "../models/loginSession.model";
+import LoginSession from "../../auth/models/loginSession.model";
 import createAuthTokens from "../../../utils/auth-tokens";
 import hashRefreshToken from "../../../utils/hash-refresh-token";
 

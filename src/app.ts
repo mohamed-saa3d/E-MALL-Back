@@ -20,6 +20,7 @@ import paymentRouter from "./apis/order/router/payment.router";
 import notificationRouter from "./apis/notifications/router/notification.router";
 import { initSocketServer } from "./socket/socket.server";
 import swaggerDocs from "../swagger/swagger-docs";
+import userRouter from "./apis/user/router/user.router";
 
 connectDB();
 const app = express();
@@ -29,6 +30,7 @@ app.use(xss);
 app.use(helmet());
 app.use(quickValidate);
 app.use("/auth", authRouter);
+app.use("/user",userRouter);
 app.use("/categories", categoryRouter);
 app.use("/store", storeRouter);
 app.use("/cart", cartRouter);

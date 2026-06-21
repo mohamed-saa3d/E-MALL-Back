@@ -1,23 +1,139 @@
-<style>
-  .email-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3498db;
-    padding: 20px;
-    border-radius: 10px;
-  }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Verification</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7fb;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #1f2937;
+      }
 
-  .email-link {
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-  }
-</style>
+      .wrapper {
+        width: 100%;
+        padding: 32px 16px;
+        box-sizing: border-box;
+      }
 
-<h1>
-  <div class="email-container">
-    <!-- <a class="email-link">Verify your email{{VerifyCode}}</a> -->
-     <h1>code email verification <b>{{VerifyCode}}</b></h1>
-  </div>
-</h1>
+      .card {
+        max-width: 560px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        border: 1px solid #e5e7eb;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        padding: 28px 32px;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 26px;
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      .content {
+        padding: 32px;
+      }
+
+      .content p {
+        margin: 0 0 16px;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #374151;
+      }
+
+      .code-box {
+        margin: 24px 0;
+        padding: 18px 20px;
+        border-radius: 12px;
+        background: #eff6ff;
+        border: 1px dashed #93c5fd;
+        text-align: center;
+      }
+
+      .code-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #2563eb;
+      }
+
+      .code {
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.2;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: #111827;
+      }
+
+      .footer {
+        padding: 0 32px 32px;
+      }
+
+      .footer p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #6b7280;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .content,
+        .footer,
+        .header {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .header h1 {
+          font-size: 22px;
+        }
+
+        .code {
+          font-size: 28px;
+          letter-spacing: 0.12em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <div class="header">
+          <h1>Verify your email</h1>
+        </div>
+
+        <div class="content">
+          <p>Use the verification code below to confirm your email address.</p>
+
+          <div class="code-box">
+            <span class="code-label">Verification Code</span>
+            <p class="code">{{VerifyCode}}</p>
+          </div>
+
+          <p>This code expires in 10 minutes. If you did not request this, you can safely ignore this email.</p>
+        </div>
+
+        <div class="footer">
+          <p>Thanks,<br />E-Mall Team</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

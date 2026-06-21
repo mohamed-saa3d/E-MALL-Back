@@ -10,7 +10,6 @@ import logout from "../controllers/logout.controller";
 import forgotPassword from "../controllers/forgot.controller";
 import resetPassword from "../controllers/reset-password.controller";
 import forgotPasswordSchema from "../validations/forgot-password.validation";
-import changePassword from "../controllers/change-password.controller";
 import emailVerification from "../controllers/email-verification.controller";
 
 import { authSensitiveLimiter, refreshLimiter } from "../../../middlewares/auth-rate-limit";
@@ -38,8 +37,6 @@ authRouter.post("/send-code-email-verification", sendCodeEmailVerification);
 
 authRouter.patch("/email-verification", emailVerification);
 
-// authRouter.post("/change-password", changePassword);/// related to user  
 // authRouter.get("/verify-token/:token", verifyToken);
-// authRouter.get("/verify-email/:token", verifyEmail);
 
 export default authRouter;
