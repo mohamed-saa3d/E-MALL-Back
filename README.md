@@ -140,12 +140,15 @@ http://localhost:3000/api-docs
 ## Project Highlights
 
 - 70+ RESTful APIs
-- Multi-Vendor Marketplace
-- Secure Authentication System
-- Order & Delivery Management
-- Payment Integration
+- Multi-Vendor Marketplace System
+- JWT + Refresh Token Authentication
+- Store & Product Management
+- Cart, Wishlist & Address Management
+- Order Processing & Delivery Workflow
+- Payment Gateway Integration
 - Real-Time Notifications
-- Production-Oriented Architecture
+- Swagger Documentation
+- TypeScript-Based Architecture
 
 ## License
 
