@@ -14,6 +14,7 @@ const registerUser = async (
   email: string,
   password: string,
   name: string,
+  phone?: string,
   ip?: string | null,
   userAgent?: string | null,
 ) => {
@@ -40,7 +41,7 @@ const registerUser = async (
 
       const hashPassword = await bcrypt.hash(password, environment.BCRYPT_SALT);
 
-      createdUser = await new User({ email, hashPassword, name }).save({ session: sessionDb });
+      createdUser = await new User({ email, hashPassword, name, role: "user", phoneNumber: phone }).save({ session: sessionDb });
 
       const userId = createdUser._id;
       const { token, refreshToken, expiresAt } = await createAuthTokens(userId);

@@ -5,13 +5,13 @@ import AppError from "../../../utils/app-error";
 import cookieOptions from "../../../options/cookie-options";
 
 
-const register: RequestHandler<{}, IResponseUser, IRequestUser> = async (
+const register: RequestHandler<{}, IResponseUser/*, IRequestUser*/> = async (
   req: Request,
   res: Response,
   next: NextFunction,
 ) => {
   try {
-    const { email, password, name } = req.body;
+    const { email, password, name , phoneNumber} = req.body;
 
     if (!email || !password || !name) {
       throw new AppError("Missing required fields", 400);
@@ -21,6 +21,7 @@ const register: RequestHandler<{}, IResponseUser, IRequestUser> = async (
       email,
       password,
       name,
+      phoneNumber,
       req.ip,
       (req.headers["user-agent"] as string) || null,
     );
@@ -35,7 +36,6 @@ const register: RequestHandler<{}, IResponseUser, IRequestUser> = async (
           id: user.user.id,
           name: user.user.name,
           email: user.user.email,
-       
         },
       },
     });

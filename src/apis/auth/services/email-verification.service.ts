@@ -1,8 +1,7 @@
-import { hash } from "crypto";
+
 import AppError from "../../../utils/app-error";
 import User from "../models/user.model";
-import { sendEmail } from "./email.service";
-import { createToken, findActiveTokenByRaw } from "./token.service";
+import {  findActiveTokenByRaw } from "./token.service";
 
 async function emailVerification(email: string,verifyCode:string) {
 
@@ -13,7 +12,6 @@ async function emailVerification(email: string,verifyCode:string) {
   if (user.isEmailVerified === true) {
     throw new AppError("Email already verified", 400);
   }
-
 
   const code = await findActiveTokenByRaw(verifyCode, "verify");
 

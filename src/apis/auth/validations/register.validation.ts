@@ -21,7 +21,7 @@ export const registerSchema = z.object({
     .regex(/[0-9]/, "Password must contain at least one number")
     .regex(/[^a-zA-Z0-9]/, "Password must contain at least one symbol"),
 
-  phone: z
+  phoneNumber: z
     .string()
     .regex(/^01\d{9}$/, "Phone number must start with 01 and be 11 digits long")
     .optional(),

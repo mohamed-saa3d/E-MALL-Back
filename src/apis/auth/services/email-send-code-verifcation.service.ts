@@ -27,6 +27,9 @@ async function sendCodeEmailVerification(email: string) {
     String(verifyCode),
   );
 
+  console.log(emailTemplate);
+  console.log(user.email);
+
   await sendEmail({
     to: email,
     subject: "Verify your email",

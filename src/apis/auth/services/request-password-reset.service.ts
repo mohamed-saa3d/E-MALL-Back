@@ -11,7 +11,7 @@ import { createToken } from "./token.service";
   }
   const {raw}= await createToken(user._id,'reset', 30);
 
-  emailForgetPassword(email,raw);
+  await emailForgetPassword(email,raw);
  }
 
  export default requestPasswordReset
